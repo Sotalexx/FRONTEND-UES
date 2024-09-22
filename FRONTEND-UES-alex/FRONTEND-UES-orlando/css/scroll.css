@@ -1,0 +1,73 @@
+body {
+    height: 100vh;
+    overflow-x: hidden; /* Evita el scroll horizontal global en pantallas grandes */
+}
+
+/* Contenedor que maneja el scroll */
+.scroll-container {
+    width: 100%;
+    overflow-x: auto; /* Activa el scroll horizontal si es necesario */
+    padding: 20px 0;
+    white-space: nowrap; /* Mantiene los botones en una sola línea para el scroll */
+}
+
+/* Ocultar scrollbar pero mantener el scroll funcional */
+.scroll-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.scroll-container {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+}
+
+.button-container {
+    display: inline-flex; 
+    gap: 15px;
+}
+
+.custom-button {
+    padding: 10px 20px;
+    border: 2px solid #AA0000;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #AA0000;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 150px; /* Mínimo ancho para asegurar la legibilidad */
+    display: inline-block;
+}
+
+.custom-button:first-child {
+    background-color: #AA0000;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: #AA0000;
+    color: white;
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .custom-button {
+        font-size: 14px; /* Tamaño de fuente más pequeño para pantallas más pequeñas */
+        padding: 8px 16px;
+    }
+}
+
+/* Media Queries para dispositivos móviles (menores de 480px) */
+@media (max-width: 480px) {
+    .scroll-container {
+        padding: 10px; /* Añade espacio alrededor para pantallas pequeñas */
+    }
+
+    .custom-button {
+        width: auto; /* Deja que el botón ajuste su tamaño basado en su contenido */
+        font-size: 12px; /* Reducimos el tamaño del texto en pantallas pequeñas */
+    }
+}
